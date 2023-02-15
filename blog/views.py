@@ -20,7 +20,7 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(publication_date__lte=timezone.now).order_by('-publication_date')
+        return Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')
 
 
 class PostDetailView(DetailView):
